@@ -1,7 +1,7 @@
 # recipes-om
 
-A version of the [Om tutorial]
-(https://github.com/swannodette/om/wiki/Tutorial).
+A recipes app based on the [Om tutorial]
+(https://github.com/omcljs/om/wiki/Basic-Tutorial).
 
 
 ## usage 
