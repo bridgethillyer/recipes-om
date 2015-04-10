@@ -3,11 +3,18 @@
   :url "http://example.com/FIXME"
 
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-2371"]
+                 [org.clojure/clojurescript "0.0-2843"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 [om "0.7.3"]]
+                 [org.webjars/react "0.11.1"]
+                 [om "0.7.3"]
+                 [cljs-http "0.1.14"]
+                 [ring/ring-core "1.3.1"]
+                 [ring/ring-jetty-adapter "1.3.1"]
+                 [figwheel "0.2.5"]]
 
-  :plugins [[lein-cljsbuild "1.0.4-SNAPSHOT"]]
+  :plugins [[lein-cljsbuild "1.0.4"]
+            [lein-figwheel "0.2.5"]
+            [lein-ring "0.8.10"]]
 
   :source-paths ["src"]
 
@@ -15,7 +22,12 @@
     :builds [{:id "recipes-om"
               :source-paths ["src"]
               :compiler {
-                :output-to "recipes_om.js"
-                :output-dir "out"
+                :output-to "resources/public/recipes_om.js" 
+                :output-dir "resources/public/out" 
                 :optimizations :none
-                :source-map true}}]})
+                :source-map true}}]}
+
+
+   :ring {:handler recipes-om.server/app
+       :nrepl {:start? true :port 4500}
+       :port 8090})
