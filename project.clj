@@ -10,6 +10,8 @@
                  [cljs-http "0.1.14"]
                  [ring/ring-core "1.3.1"]
                  [ring/ring-jetty-adapter "1.3.1"]
+                 [cljs-ajax "0.3.13"]
+                 [cheshire "5.5.0"]
                  [figwheel "0.2.5"]]
 
   :plugins [[lein-cljsbuild "1.0.4"]

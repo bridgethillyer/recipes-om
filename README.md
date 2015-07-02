@@ -5,10 +5,13 @@ A version of the [Om tutorial]
 
 
 ## usage 
-`lein cljsbuild auto`
+There is a ring server and Figwheel is used for the ClojureScript a la this [blog post](http://blog.michielborkent.nl/blog/2014/09/25/figwheel-keep-Om-turning/). So to run this, start Figwheel, then start ring:
 
-Then open index.html in your browser.
+`lein figwheel`
 
+`lein ring server`
+
+The browser should open automatically to: [localhost:8090/index.html](http://localhost:8090/index.html)
 
 ## License
 
